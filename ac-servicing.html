@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expert AC Servicing & Repair | Certified Technicians | Aurelia Group</title>
+    
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Local styles for sub-page elements -->
+    <style>
+        .sub-hero {
+            background: linear-gradient(135deg, #0284c7 0%, #0f172a 100%);
+            color: var(--white);
+            padding: 120px 0 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .sub-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 12px;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+        }
+        .sub-hero p {
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .back-nav {
+            background-color: var(--light-surface);
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        .back-nav a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+        .back-nav a:hover {
+            color: var(--primary-hover);
+            transform: translateX(-4px);
+        }
+        .detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        .detail-img {
+            border-radius: 20px;
+            box-shadow: var(--box-shadow-hover);
+            width: 100%;
+            object-fit: cover;
+        }
+        .sub-section-title {
+            font-size: 2rem;
+            margin-bottom: 24px;
+            font-weight: 800;
+            position: relative;
+            display: inline-block;
+        }
+        .sub-section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary);
+            border-radius: 2px;
+        }
+        .check-list {
+            margin-top: 20px;
+        }
+        .check-list-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .check-list-item i {
+            color: var(--success);
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+        .check-list-item h4 {
+            font-size: 1.05rem;
+            margin-bottom: 4px;
+            color: var(--dark);
+        }
+        .check-list-item p {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+        }
+        .ind-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 30px;
+        }
+        .ind-card {
+            background-color: var(--white);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            border-radius: 16px;
+            padding: 30px 24px;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.01);
+            transition: var(--transition);
+        }
+        .ind-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-light);
+            box-shadow: 0 15px 30px -10px rgba(2, 132, 199, 0.15);
+        }
+        .ind-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background-color: var(--primary-light);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            margin: 0 auto 20px auto;
+        }
+        .ind-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 8px;
+            color: var(--dark);
+        }
+        .ind-card p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+        .stage-timeline {
+            position: relative;
+            margin-top: 40px;
+        }
+        .stage-card {
+            background: var(--white);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.01);
+            transition: var(--transition);
+        }
+        .stage-card:hover {
+            border-color: var(--primary-light);
+            box-shadow: 0 10px 20px rgba(2, 132, 199, 0.08);
+            transform: scale(1.01);
+        }
+        .stage-num {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        .stage-text h3 {
+            font-size: 1.15rem;
+            margin-bottom: 4px;
+            color: var(--dark);
+        }
+        .stage-text p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        .gal-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-top: 30px;
+        }
+        .gal-card {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.01);
+            transition: var(--transition);
+        }
+        .gal-card:hover {
+            transform: scale(1.03);
+            box-shadow: var(--box-shadow-hover);
+        }
+        .gal-card img {
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            display: block;
+        }
+        @media (max-width: 992px) {
+            .detail-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .ind-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .gal-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 576px) {
+            .ind-grid {
+                grid-template-columns: 1fr;
+            }
+            .sub-hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <nav class="navbar scrolled">
+        <div class="container">
+            <a href="index.html#home" class="nav-brand">
+                <div class="brand-text">
+                    <span class="brand-name">Aurelia</span>
+                    <span class="brand-sub">Group</span>
+                </div>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About Us</a></li>
+                <li><a href="index.html#services" class="nav-link active">Services</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="tel:+919324661717" class="btn btn-primary btn-sm"><i class="fa-solid fa-phone"></i> Call Now</a>
+            </div>
+            <button class="hamburger" aria-label="Toggle Navigation Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="sub-hero">
+        <div class="container">
+            <h1>AC Servicing & Repair</h1>
+            <p> Doorstep service by certified AC technicians. Deep jet cleaning, gas charging, and diagnostics for maximum cooling efficiency.</p>
+        </div>
+    </section>
+
+    <!-- Back Navigation -->
+    <div class="back-nav">
+        <div class="container">
+            <a href="index.html#services"><i class="fas fa-arrow-left"></i> Back to Services</a>
+        </div>
+    </div>
+
+    <!-- Service Info (What we offer) -->
+    <section class="section-padding" style="background-color: var(--white);">
+        <div class="container">
+            <div class="detail-grid">
+                <div>
+                    <h2 class="sub-section-title">What We Offer</h2>
+                    <p class="about-desc" style="margin-top: 15px;">Maximize your air conditioner's lifetime and lower your power consumption. Aurelia Group supplies certified technicians equipped with advanced tools to clean, repair, and maintain your split, window, and central cooling units.</p>
+                    
+                    <div class="check-list">
+                        <div class="check-list-item">
+                            <i class="fas fa-wind"></i>
+                            <div>
+                                <h4>Split & Window AC Servicing</h4>
+                                <p>Deep filter jet washing, indoor cooling coils chemical scrubbing, and outdoor unit condenser cleansing to clear blockages and restore pure air flow.</p>
+                            </div>
+                        </div>
+                        <div class="check-list-item">
+                            <i class="fas fa-gas-pump"></i>
+                            <div>
+                                <h4>Gas Charging & Leakage Repair</h4>
+                                <p>Refilling of eco-friendly refrigerant gas (R32, R410, R22) after fixing copper pipe leaks, preventing compressor failures.</p>
+                            </div>
+                        </div>
+                        <div class="check-list-item">
+                            <i class="fas fa-wrench"></i>
+                            <div>
+                                <h4>AC Installation & Electrical Fixes</h4>
+                                <p>Safe mounting, uninstalling, thermostat calibrations, fan motor repairs, and complete diagnostic assessments with a 30-day warranty.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <img src="service_ac.png" alt="AC Servicing & Repair" class="detail-img" onerror="this.src='why_choose_us.png';">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries where we offer -->
+    <section class="section-padding" style="background-color: var(--light-surface);">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="sub-section-title" style="display: block; margin: 0 auto 16px auto; width: fit-content;">Industries We Serve</h2>
+                <p class="section-subtitle" style="max-width: 600px; margin: 0 auto;">Our technicians service commercial cooling systems and residential setups alike.</p>
+            </div>
+            
+            <div class="ind-grid">
+                <div class="ind-card">
+                    <div class="ind-icon"><i class="fas fa-home"></i></div>
+                    <h3>Residences & Villas</h3>
+                    <p>Split and window AC servicing, filter cleaning, and diagnostics for comfortable homes.</p>
+                </div>
+                <div class="ind-card">
+                    <div class="ind-icon"><i class="fas fa-building"></i></div>
+                    <h3>Corporate Offices</h3>
+                    <p>Cassette and central AC maintenance to maintain optimal working environments for staff.</p>
+                </div>
+                <div class="ind-card">
+                    <div class="ind-icon"><i class="fas fa-store"></i></div>
+                    <h3>Retail Showrooms</h3>
+                    <p>Regular wet jet wash servicing to keep customers cool and comfort during peak shopping hours.</p>
+                </div>
+                <div class="ind-card">
+                    <div class="ind-icon"><i class="fas fa-utensils"></i></div>
+                    <h3>Hotels & Restaurants</h3>
+                    <p>Kitchen exhaust systems audits, dining area split AC chemical cleaning, and repair service.</p>
+                </div>
+                <div class="ind-card">
+                    <div class="ind-icon"><i class="fas fa-hospital"></i></div>
+                    <h3>Clinics & Hospitals</h3>
+                    <p>Pure HEPA filter wash, air flow check, and bacteria disinfection for sterile recovery rooms.</p>
+                </div>
+                <div class="ind-card">
+                    <div class="ind-icon"><i class="fas fa-school"></i></div>
+                    <h3>Schools & Institutes</h3>
+                    <p>Classroom cooling audits and annual maintenance agreements to ensure stable classroom temperatures.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Servicing Process -->
+    <section class="section-padding" style="background-color: var(--white);">
+        <div class="container" style="max-width: 800px;">
+            <div class="text-center">
+                <h2 class="sub-section-title" style="display: block; margin: 0 auto 16px auto; width: fit-content;">Our 5-Point Maintenance Process</h2>
+                <p class="section-subtitle" style="margin-bottom: 40px;">Professional precision at every step of our AC diagnostic check.</p>
+            </div>
+
+            <div class="stage-timeline">
+                <div class="stage-card">
+                    <div class="stage-num">01</div>
+                    <div class="stage-text">
+                        <h3>Initial Audit & Test</h3>
+                        <p>We check temperature levels, airflow speed, and monitor compressor sounds to diagnose hidden faults.</p>
+                    </div>
+                </div>
+                <div class="stage-card">
+                    <div class="stage-num">02</div>
+                    <div class="stage-text">
+                        <h3>Jet Wet Washing</h3>
+                        <p>We wrap the indoor AC unit in a clean plastic service bag and wash the filters, blower wheel, and coils using high-pressure jet pumps.</p>
+                    </div>
+                </div>
+                <div class="stage-card">
+                    <div class="stage-num">03</div>
+                    <div class="stage-text">
+                        <h3>Drainage Flush</h3>
+                        <p>The drain tray and water exit pipe are high-pressure flushed to clear blockage debris, preventing messy water drip leaks inside.</p>
+                    </div>
+                </div>
+                <div class="stage-card">
+                    <div class="stage-num">04</div>
+                    <div class="stage-text">
+                        <h3>Gas Pressure Vetting</h3>
+                        <p>Our technicians check refrigerant pressures using gauge manifolds, performing leakage repair and gas top-up if necessary.</p>
+                    </div>
+                </div>
+                <div class="stage-card">
+                    <div class="stage-num">05</div>
+                    <div class="stage-text">
+                        <h3>Performance & Warranty Check</h3>
+                        <p>We run the unit for 10 minutes, measuring grid current and grill output temperature. Includes a 30-day service warranty protection.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photos of Services -->
+    <section class="section-padding" style="background-color: var(--light-surface);">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="sub-section-title" style="display: block; margin: 0 auto 16px auto; width: fit-content;">Service Photo Gallery</h2>
+                <p class="section-subtitle">Real photos showing our HVAC technicians servicing split air conditioning units.</p>
+            </div>
+
+            <div class="gal-grid">
+                <div class="gal-card">
+                    <img src="service_ac.png" alt="Aurelia AC technician servicing split AC unit">
+                </div>
+                <div class="gal-card">
+                    <img src="why_choose_us.png" alt="Aurelia high-pressure cleaning tools">
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="index.html#contact" class="btn btn-primary">Book This Service Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo-brand">
+                        <h3>Aurelia</h3>
+                    </div>
+                    <p>Aurelia Group is dedicated to providing superior facility services, including water storage sanitization, security guard placements, professional housekeeping, and AC maintenance.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#services">Our Services</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Our Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="tank-cleaning.html">Water Tank Clean</a></li>
+                        <li><a href="manpower.html">Security Guards</a></li>
+                        <li><a href="manpower.html">Housekeeping Crew</a></li>
+                        <li><a href="ac-servicing.html">AC Technicians</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-contact-info">
+                        <li><i class="fas fa-phone-alt"></i><a href="tel:+919324661717">+91 93246 61717</a></li>
+                        <li><i class="fas fa-envelope"></i><a href="mailto:info@aureliatanks.com">info@aureliatanks.com</a></li>
+                        <li><i class="fas fa-user"></i><span>Director: Sahil Sudhesh Chavan</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Aurelia Group. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
